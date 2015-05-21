@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from functools import wraps
+import random
 
 
 class TestCaseMediator(object):
@@ -55,14 +56,18 @@ class TestCaseMediator(object):
 
         return mp
 
-    def create_suite(self, program_data):
+    def create_suite(self, program_data, shuffle=None):
         """
         Create suite instance
         """
+
         suite = program_data.suite_class(
             config=program_data.config,
             handlers=self._handlers,
         )
+
+        if callable(shuffle):
+            shuffle(self._test_cases)
 
         for case in self._test_cases:
             suite.addTests(

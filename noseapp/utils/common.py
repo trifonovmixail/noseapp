@@ -2,7 +2,6 @@
 
 import time
 
-
 WAITING_FOR_SLEEP = 0.5
 WAITING_FOR_TIMEOUT = 30
 
