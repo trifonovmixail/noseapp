@@ -9,6 +9,8 @@ Use noseapp-manage run command for running your application.
 """
 
 import os
+import random
+import time
 import sys
 import logging
 from argparse import ArgumentError
@@ -229,6 +231,7 @@ class NoseApp(object):
 
         :type suite: list, tuple
         """
+
         for s in suite:
             self.register_suite(s)
 
